@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Game Zone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Choose Your Game</h1>
+        <button id="snakeGameBtn">Play Snake Game</button>
+        <button id="whacAMoleBtn">Play Whac a Mole</button>
+        <button id="iDragonBtn">Play iDragon</button>
+    </div>
+
+    <div id="gameContainer" class="hidden">
+        <!-- Snake Game -->
+        <div id="snakeGame" class="hidden">
+            <div id="scoreBox">Score: 0</div>
+            <div id="hiscoreBox">HiScore: 0</div>
+            <div id="board"></div>
+        </div>
+
+        <!-- Whac a Mole Game -->
+        <div id="moleGame" class="hidden">
+            <h1>Whac a Mole</h1>
+            <h2 id="score">0</h2>
+            <div id="moleBoard"></div>
+        </div>
+
+        <!-- iDragon Game -->
+        <div class="gameContainer hidden" id="iDragonGame">
+            <div class="gameOver">Welcome to iDragon Adventures</div>
+            <div class="dino"></div>
+            <div id="scoreCont">Your Score: 0</div>
+            <div class="obstacle obstacleAni"></div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+

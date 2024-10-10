@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url("./main-bg.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+.container h1 {
+    font-size: 4rem;
+}
+
+#snakeGameBtn, #whacAMoleBtn, #iDragonBtn, #flappyBirdBtn {
+    font-size: 1.5rem;
+    background-color: antiquewhite;
+    border-radius: 20%;
+    padding: 2%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Snake Game */
+#board {
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 90vmin;
+    height: 90vmin;
+    border: 2px solid black;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    margin-top: 20px;
+}
+
+.head {
+    background: linear-gradient(rgb(240, 124, 124), rgb(228, 228, 129));
+    border: 2px solid rgb(34, 4, 34);
+    border-radius: 9px;
+}
+
+.snake {
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 12px;
+}
+
+.food {
+    background: linear-gradient(red, purple);
+    border: .25vmin solid black;
+    border-radius: 8px;
+}
+
+/* Whac a Mole */
+#moleBoard {
+    width: 550px;
+    height: 550px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: url("./soil.png");
+    background-size: cover;
+    border: 3px solid white;
+    border-radius: 25px;
+}
+
+#moleBoard div {
+    width: 180px; 
+    height: 180px;
+    background-image: url("./pipe.png");
+    background-size: cover;
+    position: relative;
+}
+
+#moleGame h1, h2 {
+    text-align: center;
+}
+
+#moleBoard div img {
+    width: 100px;
+    height: 100px;
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    top: 26%;  
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 60%; 
+    height: auto; 
+}
+
+/* iDragon */
+.gameContainer {
+    background-image: url(./bg.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the background covers the entire container */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    z-index: -1; /* Send to back */
+}
+
+.dino {
+    background-image: url(./dino.png);
+    transition: transform 0.6s ease-in-out; /* Smooth jumping */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 233px;
+    height: 114px;
+    position: absolute;
+    bottom: 0;
+    left: 52px;
+}
+
+.obstacle {
+    width: 166px;
+    height: 113px;
+    background-image: url(./dragon.png);
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 44vw;
+}
+
+.animateDino {
+    animation: dino 0.6s linear;
+    transform: translateY(-100px); /* Jump height */
+}
+
+.obstacleAni {
+    animation: obstacleAni 5s linear infinite;
+}
+
+.gameOver {
+    position: relative;
+    top: 63px;
+    font-size: 53px;
+    text-align: center; 
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#scoreCont {
+    font-size: 25px;
+    color: #54212f;
+    font-weight: bold;
+    position: absolute;
+    right: 45px;
+    top: 31px;
+    border: 2px solid black;
+    padding: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    border-radius: 10px;
+}
+
+@keyframes dino {
+    0% {
+        bottom: 0;
+    }
+    50% {
+        bottom: 422px;
+    }
+    100% {
+        bottom: 0; 
+    }
+}
+
+@keyframes obstacleAni {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -10vw;
+    }
+}
+
